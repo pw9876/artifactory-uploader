@@ -75,7 +75,7 @@ def main(
 
     \b
     Examples:
-      artifactory-uploader --url https://acme.jfrog.io/artifactory --repo libs-release --source ./dist
+      artifactory-uploader --url https://acme.jfrog.io/artifactory --repo libs-release -s ./dist
       artifactory-uploader --url $URL --repo my-repo --source ./build --target releases/1.0
       artifactory-uploader --url $URL --repo my-repo --source ./artifacts --dry-run
     """

@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from pathlib import Path
 from unittest.mock import MagicMock
 
 import pytest
@@ -71,7 +70,7 @@ class TestUploadDirectory:
         (tmp_path / "x" / "y").mkdir(parents=True)
         (tmp_path / "x" / "y" / "file.txt").write_bytes(b"data")
         client = _make_client()
-        results = upload_directory(client, tmp_path, "repo")
+        upload_directory(client, tmp_path, "repo")
         remote_path = client.session.put.call_args[0][0]
         assert "x/y/file.txt" in remote_path
 
